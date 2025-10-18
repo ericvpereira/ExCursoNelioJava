@@ -41,16 +41,16 @@ public class Conta {
 
     public void sacar(double quantia) {
         if (quantia > 0 && quantia <= saldo) {
-            saldo -= quantia;
+            saldo = saldo - quantia - 5.0;;
         }
     }
 
     public String toString() {
-        return "Conta " 
+        return "Account " 
                + numero 
-               + ", Titular: " 
+               + ", Holder: " 
                + titular
-               + ", Saldo: $ "
+               + ", Balance: $ "
                + String.format("%.2f", saldo);  
     }
 }
