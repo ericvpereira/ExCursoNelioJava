@@ -24,6 +24,28 @@ public class Program {
             altura[i] = sc.nextDouble();
             sc.nextLine();
         }
+        double soma = 0.0;
+        for (int i = 0; i < n; i++) {
+            soma += altura[i];
+        }
+        double media = soma / n;
+        System.out.println("\nAltura media: " + String.format("%.2f", media));
+        int count = 0;
+        for (int i = 0; i < n; i++) {
+            if (idade[i] < 16) {
+                count++;
+            } else {
+                continue;
+            }
+        }
+        double percent = (double) count / n * 100.0;
+        System.out.println("Pessoas com menos de 16 anos: " + String.format("%.1f", percent) + "%");
+        for (int i = 0; i < n; i++) {
+            if (idade[i] < 16) {
+                System.out.println(nome[i]);
+            }
+        }
+        sc.close();
     }
     
 }
